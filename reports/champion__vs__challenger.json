@@ -1,0 +1,2272 @@
+{
+  "left_path": "lit_md/champion.md",
+  "right_path": "lit_md/challenger.md",
+  "left_title": "A Segment-Level Expected Loss Framework for Unsecured Revolving Credit: The Cardinal Loss Rate Model (CLRM v4.2)",
+  "right_title": "HELIX: A Lifetime, Account-Level Loss Engine for Credit Card Portfolios",
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "params": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": null,
+    "device": "cpu",
+    "threads": null,
+    "batch_size": 32,
+    "calibration": "percentile",
+    "blend_weight": 0.5,
+    "section_top_k": 3,
+    "section_margin": 0.03,
+    "section_anchor_floor": 0.75,
+    "section_secondary_floor": 0.9,
+    "section_capacity": 3,
+    "section_weak_floor": 0.93,
+    "block_top_k": 2,
+    "block_margin": 0.02,
+    "block_anchor_floor": 0.8,
+    "block_secondary_floor": 0.95,
+    "block_capacity": 1,
+    "block_weak_floor": 0.97,
+    "coverage_floor": 0.9,
+    "inline_diff_floor": 0.97,
+    "excerpt_chars": 420,
+    "layout": "html-table",
+    "include_matrix": false,
+    "cache": true
+  },
+  "calibration": {
+    "n_pairs": 414,
+    "raw_min": 0.0604,
+    "raw_p05": 0.1709,
+    "raw_median": 0.3944,
+    "raw_p95": 0.6205,
+    "raw_max": 0.7648,
+    "deciles": [
+      0.0604,
+      0.2145,
+      0.2636,
+      0.3128,
+      0.3553,
+      0.3944,
+      0.4342,
+      0.4804,
+      0.5205,
+      0.5696,
+      0.7648
+    ],
+    "mode": "percentile",
+    "lexical_median": 0.037,
+    "lexical_max": 0.3383
+  },
+  "metrics": {
+    "mean_accepted_score": 0.951,
+    "accepted_pairs": 18,
+    "strong_pairs": 12,
+    "anchors": 5,
+    "weak_pairs": 6,
+    "sections_left": 27,
+    "sections_right": 22,
+    "left_only": 10,
+    "right_only": 9,
+    "split_count": 6,
+    "merge_count": 6,
+    "moved_count": 8,
+    "order_divergence": 0.4444,
+    "kendall_tau": 0.1952,
+    "coverage_left": {
+      "prose": 0.9681,
+      "table": 0.9321,
+      "math": 0.6071,
+      "overall": 0.9454
+    },
+    "coverage_right": {
+      "prose": 0.8697,
+      "table": 0.8832,
+      "math": 1.0,
+      "overall": 0.8771
+    },
+    "left_score_deciles": [
+      0.394,
+      0.86,
+      0.9181,
+      0.936,
+      0.9494,
+      0.9654,
+      0.975,
+      0.9849,
+      0.9896,
+      0.9956,
+      0.9998
+    ],
+    "right_score_deciles": [
+      0.6646,
+      0.7768,
+      0.9084,
+      0.9298,
+      0.9432,
+      0.9577,
+      0.9756,
+      0.985,
+      0.9898,
+      0.9956,
+      0.9998
+    ],
+    "document_cosine": 0.8674
+  },
+  "section_matches": [
+    {
+      "left_id": "left:s001",
+      "right_id": "right:s002",
+      "score": 0.9928,
+      "cosine": 0.7648000121116638,
+      "lexical": 0.16762354969978333,
+      "relation": "split",
+      "moved": false,
+      "block_matches": [
+        {
+          "left_id": "left:s001:b00",
+          "right_id": "right:s002:b00",
+          "score": 0.9898,
+          "cosine": 0.6111999750137329,
+          "lexical": 0.13117705285549164,
+          "inline_diff": "~~We document the specification, estimation and validation of the Cardinal Loss Rate Model (CLRM), the incumbent expected credit loss engine for Meridian Bancorp's unsecured~~ **HELIX estimates** credit card ~~portfolio. CLRM decomposes~~ **credit losses account by account and month by month over** the **full behavioural life of each account, rather than producing a single** twelve-month ~~portfolio~~ loss rate ~~into the classical product of probability of~~ **for a risk segment. Loss is assembled as a discounted sum over monthly survival-weighted** default ~~(PD), exposure at default (EAD) and loss given default (LGD), estimated at the level of 48 homogeneous risk segments defined by a cross of behaviour score band, utilization band and delinquency stage. PD is estimated with a segment-conditional logistic regression on a quarterly cohort panel spanning 2009Q1-2023Q4; EAD is estimated through a credit conversion factor (CCF) applied to undrawn commitments; LGD is estimated as one minus a beta-regression recovery rate on post-charge-off cash collections. On a holdout period covering 2021Q1-2023Q4 the model reproduces the realized annualized net loss rate of 3.41% with an absolute error of 14 basis points, and achieves a segment-level Gini coefficient of 0.612 on the twelve-month default indicator. We argue that the transparency and stability of a segment-level multiplicative decomposition outweigh the modest discriminatory gains available from account-level machine learning alternatives, and we provide the sensitivity analysis required to support that claim.~~ **events:**",
+          "numeric_deltas": []
+        },
+        {
+          "left_id": "left:s001:b01",
+          "right_id": "right:s002:b02",
+          "score": 0.9974,
+          "cosine": 0.6198999881744385,
+          "lexical": 0.21756787598133087,
+          "inline_diff": "~~**Keywords:** expected credit loss, credit cards, probability~~ **The three factors are the same as in any expected-loss framework - a default probability, an exposure, and a loss severity - but each is a *function** of ~~default, exposure at default, loss given default, credit conversion factor, loss rate~~ **account age and of a macroeconomic path* rather than a segment constant.**",
+          "numeric_deltas": []
+        }
+      ],
+      "left_only_blocks": [
+        "left:s001:b02"
+      ],
+      "right_only_blocks": [
+        "right:s002:b01",
+        "right:s002:b03",
+        "right:s002:b04i00",
+        "right:s002:b04i01",
+        "right:s002:b04i02",
+        "right:s002:b04i03",
+        "right:s002:b04i04",
+        "right:s002:b05"
+      ]
+    },
+    {
+      "left_id": "left:s001",
+      "right_id": "right:s004",
+      "score": 0.9492,
+      "cosine": 0.6075000166893005,
+      "lexical": 0.1175377294421196,
+      "relation": "split",
+      "moved": false,
+      "block_matches": [
+        {
+          "left_id": "left:s001:b01",
+          "right_id": "right:s004:b00",
+          "score": 0.9858,
+          "cosine": 0.49810001254081726,
+          "lexical": 0.16850963234901428,
+          "inline_diff": "~~**Keywords:**~~ **A twelve-month loss rate answers a question that neither the accounting standard nor the pricing desk actually asks. Accounting requires** expected credit ~~loss, credit cards, probability~~ **losses over the expected life** of ~~default, exposure at default, loss given default, credit conversion~~ **the exposure; pricing requires the net present value of a relationship. The incumbent framework answers both by multiplying a twelve-month number by a judgmental lifetime** factor, ~~loss rate~~ **currently 2.18. That factor is a single scalar applied across a portfolio whose behavioural lives differ by a factor of four between the revolver and transactor populations.**",
+          "numeric_deltas": []
+        }
+      ],
+      "left_only_blocks": [
+        "left:s001:b00",
+        "left:s001:b02"
+      ],
+      "right_only_blocks": [
+        "right:s004:b01"
+      ]
+    },
+    {
+      "left_id": "left:s001",
+      "right_id": "right:s014",
+      "score": 0.9286,
+      "cosine": 0.5791000127792358,
+      "lexical": 0.11011271178722382,
+      "relation": "weak",
+      "moved": true,
+      "block_matches": [
+        {
+          "left_id": "left:s001:b00",
+          "right_id": "right:s014:b04",
+          "score": 0.954,
+          "cosine": 0.48010000586509705,
+          "lexical": 0.07509967684745789,
+          "inline_diff": "",
+          "numeric_deltas": []
+        },
+        {
+          "left_id": "left:s001:b01",
+          "right_id": "right:s014:b01",
+          "score": 0.9431,
+          "cosine": 0.4345000088214874,
+          "lexical": 0.08324778825044632,
+          "inline_diff": "",
+          "numeric_deltas": []
+        }
+      ],
+      "left_only_blocks": [
+        "left:s001:b02"
+      ],
+      "right_only_blocks": [
+        "right:s014:b02",
+        "right:s014:b05",
+        "right:s014:b07"
+      ]
+    },
+    {
+      "left_id": "left:s002",
+      "right_id": "right:s004",
+      "score": 0.948,
+      "cosine": 0.6452999711036682,
+      "lexical": 0.10336273163557053,
+      "relation": "split",
+      "moved": false,
+      "block_matches": [
+        {
+          "left_id": "left:s002:b01",
+          "right_id": "right:s004:b00",
+          "score": 0.991,
+          "cosine": 0.5577999949455261,
+          "lexical": 0.1628493070602417,
+          "inline_diff": "**A twelve-month loss rate answers a question that neither the accounting standard nor the pricing desk actually asks. Accounting requires expected credit losses over the expected life of the exposure; pricing requires the net present value of a relationship.** The ~~regulatory~~ **incumbent framework answers both by multiplying a twelve-month number by a judgmental lifetime factor, currently 2.18. That factor is a single scalar applied across a portfolio whose behavioural lives differ by a factor of four between the revolver** and ~~accounting literature has converged on a multiplicative decomposition of expected loss,~~ **transactor populations.**",
+          "numeric_deltas": []
+        },
+        {
+          "left_id": "left:s002:b05i01",
+          "right_id": "right:s004:b01",
+          "score": 0.9295,
+          "cosine": 0.4189000129699707,
+          "lexical": 0.07273309677839279,
+          "inline_diff": "",
+          "numeric_deltas": []
+        }
+      ],
+      "left_only_blocks": [
+        "left:s002:b00",
+        "left:s002:b02",
+        "left:s002:b03",
+        "left:s002:b04",
+        "left:s002:b05i00",
+        "left:s002:b05i02",
+        "left:s002:b06"
+      ],
+      "right_only_blocks": []
+    },
+    {
+      "left_id": "left:s002",
+      "right_id": "right:s006",
+      "score": 0.9146,
+      "cosine": 0.5365999937057495,
+      "lexical": 0.14779992401599884,
+      "relation": "weak",
+      "moved": false,
+      "block_matches": [
+        {
+          "left_id": "left:s002:b05i02",
+          "right_id": "right:s006:b00",
+          "score": 0.9935,
+          "cosine": 0.5630999803543091,
+          "lexical": 0.19195017218589783,
+          "inline_diff": "~~**Separable~~ **The product $PD \\times EAD \\times LGD$ of separately estimated** factor ~~estimation.** PD, EAD~~ **means is not the mean of the product. Under stress all three factors deteriorate together,** and ~~LGD are estimated independently and combined multiplicatively. Correlation between~~ **the product form understates loss. The incumbent handles this with a judgmental additive overlay applied when projected unemployment change exceeds 200 basis points. HELIX instead conditions all three** factors **on the same macroeconomic path, so that the covariance** is ~~handled through an explicit stress overlay (Section 4.5)~~ **generated by the model** rather than ~~through a joint likelihood.~~ **supplied by committee.**",
+          "numeric_deltas": []
+        }
+      ],
+      "left_only_blocks": [
+        "left:s002:b00",
+        "left:s002:b01",
+        "left:s002:b02",
+        "left:s002:b03",
+        "left:s002:b04",
+        "left:s002:b05i00",
+        "left:s002:b05i01",
+        "left:s002:b06"
+      ],
+      "right_only_blocks": []
+    },
+    {
+      "left_id": "left:s007",
+      "right_id": "right:s007",
+      "score": 0.9062,
+      "cosine": 0.5246000289916992,
+      "lexical": 0.2049671858549118,
+      "relation": "weak",
+      "moved": false,
+      "block_matches": [
+        {
+          "left_id": "left:s007:b00",
+          "right_id": "right:s007:b00",
+          "score": 0.9964,
+          "cosine": 0.5742999911308289,
+          "lexical": 0.2536030113697052,
+          "inline_diff": "~~An account is treated as defaulted in a cohort if, within twelve months~~ **> HELIX retains the definition** of ~~cohort origin, any of the following occurs: (i) contractual charge-off at 180~~ **default (180** days past ~~due; (ii) bankruptcy charge-off; (iii) enrollment in a~~ **due, bankruptcy, or** long-term hardship ~~program~~ with ~~a contractual~~ rate ~~concession exceeding 500 basis points. Definition (iii) contributes 8.4%~~ **concession), the exclusion** of ~~defaults~~ **private-label** and ~~was added in version 4.0 following a 2021 finding by Model Risk Management~~ **small-business portfolios, and the 36-month recovery observation window. These are held fixed deliberately so** that ~~hardship enrollments were materially under-captured.~~ **the comparison against the incumbent is attributable to specification rather than to scope.**",
+          "numeric_deltas": [
+            {
+              "from": "180",
+              "to": "(180"
+            }
+          ]
+        }
+      ],
+      "left_only_blocks": [
+        "left:s007:b01"
+      ],
+      "right_only_blocks": []
+    },
+    {
+      "left_id": "left:s009",
+      "right_id": "right:s002",
+      "score": 0.9758,
+      "cosine": 0.6582000255584717,
+      "lexical": 0.1438022255897522,
+      "relation": "merge",
+      "moved": true,
+      "block_matches": [
+        {
+          "left_id": "left:s009:b00",
+          "right_id": "right:s002:b00",
+          "score": 0.9882,
+          "cosine": 0.5375999808311462,
+          "lexical": 0.151734858751297,
+          "inline_diff": "~~Let $s$ index segments~~ **HELIX estimates credit card credit losses account by account** and ~~$t$ index quarterly cohorts. Define~~ **month by month over** the **full behavioural life of each account, rather than producing a single** twelve-month loss rate for ~~segment $s$ in cohort $t$~~ **a risk segment. Loss is assembled** as ~~the ratio of realized net credit losses to the beginning balance:~~ **a discounted sum over monthly survival-weighted default events:**",
+          "numeric_deltas": []
+        },
+        {
+          "left_id": "left:s009:b01",
+          "right_id": "right:s002:b01",
+          "score": 0.9223,
+          "cosine": 0.3580999970436096,
+          "lexical": 0.2125384360551834,
+          "inline_diff": "",
+          "numeric_deltas": []
+        },
+        {
+          "left_id": "left:s009:b02",
+          "right_id": "right:s002:b02",
+          "score": 0.973,
+          "cosine": 0.5422000288963318,
+          "lexical": 0.09497826546430588,
+          "inline_diff": "~~where $D_i$~~ **The three factors are the same as in any expected-loss framework - a default probability, an exposure, and a loss severity - but each** is ~~the default indicator, $E_i$ the exposure at default, $R_i$ the ultimate recovery rate~~ **a *function of account age** and ~~$B_i$ the beginning balance. Taking expectations~~ **of a macroeconomic path* rather than a** segment ~~by segment and replacing the ratio of expectations with the product of factor estimates yields the working form of the model:~~ **constant.**",
+          "numeric_deltas": []
+        }
+      ],
+      "left_only_blocks": [
+        "left:s009:b03",
+        "left:s009:b04",
+        "left:s009:b05"
+      ],
+      "right_only_blocks": [
+        "right:s002:b03",
+        "right:s002:b04i00",
+        "right:s002:b04i01",
+        "right:s002:b04i02",
+        "right:s002:b04i03",
+        "right:s002:b04i04",
+        "right:s002:b05"
+      ]
+    },
+    {
+      "left_id": "left:s010",
+      "right_id": "right:s010",
+      "score": 0.9152,
+      "cosine": 0.5932999849319458,
+      "lexical": 0.08929302543401718,
+      "relation": "weak",
+      "moved": false,
+      "block_matches": [
+        {
+          "left_id": "left:s010:b03",
+          "right_id": "right:s010:b02",
+          "score": 0.929,
+          "cosine": 0.37599998712539673,
+          "lexical": 0.11705240607261658,
+          "inline_diff": "",
+          "numeric_deltas": []
+        }
+      ],
+      "left_only_blocks": [
+        "left:s010:b00",
+        "left:s010:b01",
+        "left:s010:b02",
+        "left:s010:b04"
+      ],
+      "right_only_blocks": [
+        "right:s010:b00",
+        "right:s010:b01",
+        "right:s010:b03",
+        "right:s010:b04",
+        "right:s010:b05"
+      ]
+    },
+    {
+      "left_id": "left:s011",
+      "right_id": "right:s011",
+      "score": 0.9916,
+      "cosine": 0.7135999798774719,
+      "lexical": 0.19350361824035645,
+      "relation": "merge",
+      "moved": false,
+      "block_matches": [
+        {
+          "left_id": "left:s011:b01",
+          "right_id": "right:s011:b01",
+          "score": 0.9788,
+          "cosine": 0.4537000060081482,
+          "lexical": 0.43496713042259216,
+          "inline_diff": "~~$$EAD_i~~ **$$\\Delta B_i(m)** = ~~B_i + CCF_s~~ **\\underbrace{\\pi_i(m)** \\cdot (L_i - ~~B_i).$$~~ **B_i(m-1))}_{\\text{purchase/drawdown}} - \\underbrace{\\rho_i(m) \\cdot B_i(m-1)}_{\\text{payment}},$$**",
+          "numeric_deltas": []
+        },
+        {
+          "left_id": "left:s011:b02",
+          "right_id": "right:s011:b03",
+          "score": 0.9841,
+          "cosine": 0.4991999864578247,
+          "lexical": 0.1478681117296219,
+          "inline_diff": "~~$CCF_s$ is estimated~~ **Critically, $\\pi$ and $\\rho$ are fitted on the *pre-default* trajectory of accounts that subsequently defaulted** as **well as on survivors, with** the ~~ratio of realized additional drawdown~~ **default indicator excluded from the feature set** to ~~available line over~~ **avoid look-ahead. The resulting paths reproduce** the ~~twelve months preceding charge-off, pooled within segment and winsorized at the 1st and 99th percentiles. The estimator is the *fixed-horizon* variant: for each defaulted account, the reference date is exactly~~ **empirical run-up: simulated utilization rises from a median 0.63** twelve months before **default to 0.97 in** the ~~charge-off date,~~ **default month, against observed 0.61** and ~~accounts whose line was reduced by the bank during the window are excluded to avoid attributing management action to borrower behaviour. This exclusion removes 11.2% of defaults and is a known conservatism: excluded accounts had a mean realized drawdown below the retained population.~~ **0.96.**",
+          "numeric_deltas": [
+            {
+              "from": "11.2%",
+              "to": "0.96."
+            }
+          ]
+        },
+        {
+          "left_id": "left:s011:b03",
+          "right_id": "right:s011:b05",
+          "score": 0.9728,
+          "cosine": 0.5331000089645386,
+          "lexical": 0.0963779166340828,
+          "inline_diff": "**| Method | MAE (% of limit) | Bias (% of limit) | Correlation with realized EAD | |---|---|---|---| | Fixed** CCF ~~is capped at 1.00 and floored at 0.00. No macroeconomic conditioning is applied to CCF; a 2022 study found the through-the-cycle variation in~~ **by utilization band | 7.9 | -1.4 | 0.781 | | Fixed CCF by full** segment ~~CCF to be within the estimation standard error for all but the >90% utilization band.~~ **cross | 7.1 | -1.1 | 0.804 | | HELIX simulated path | 3.2 | +0.3 | 0.918 |**",
+          "numeric_deltas": [
+            {
+              "from": "1.00",
+              "to": "7.9"
+            },
+            {
+              "from": "0.00.",
+              "to": "-1.4"
+            },
+            {
+              "from": "2022",
+              "to": "0.781"
+            }
+          ]
+        }
+      ],
+      "left_only_blocks": [
+        "left:s011:b00"
+      ],
+      "right_only_blocks": [
+        "right:s011:b00",
+        "right:s011:b02",
+        "right:s011:b06"
+      ]
+    },
+    {
+      "left_id": "left:s012",
+      "right_id": "right:s012",
+      "score": 0.9842,
+      "cosine": 0.6575000286102295,
+      "lexical": 0.25160935521125793,
+      "relation": "merge",
+      "moved": true,
+      "block_matches": [
+        {
+          "left_id": "left:s012:b00",
+          "right_id": "right:s012:b06",
+          "score": 0.9966,
+          "cosine": 0.6869000196456909,
+          "lexical": 0.18407751619815826,
+          "inline_diff": "**| Channel | Share of charge-offs | Nominal recovery | Mean months to 80% of recovery | Discounted** LGD ~~is modelled as one minus the ultimate recovery rate, where recovery is nominal cash collected within 36 months of charge-off, inclusive of debt-sale proceeds net of agency commissions:~~ **| |---|---|---|---|---| | Internal collections | 34% | 21.1% | 9.4 | 0.812 | | Agency placement | 41% | 13.8% | 17.2 | 0.881 | | Debt sale | 19% | 8.2% | 1.0 | 0.919 | | Bankruptcy | 6% | 4.9% | 22.6 | 0.960 | | **Weighted** | **100%** | **14.9%** | **13.1** | **0.879** |**",
+          "numeric_deltas": [
+            {
+              "from": "36",
+              "to": "34%"
+            }
+          ]
+        },
+        {
+          "left_id": "left:s012:b01",
+          "right_id": "right:s012:b03",
+          "score": 0.9186,
+          "cosine": 0.35519999265670776,
+          "lexical": 0.19020016491413116,
+          "inline_diff": "",
+          "numeric_deltas": []
+        },
+        {
+          "left_id": "left:s012:b02",
+          "right_id": "right:s012:b01i00",
+          "score": 0.9634,
+          "cosine": 0.41819998621940613,
+          "lexical": 0.22674795985221863,
+          "inline_diff": "",
+          "numeric_deltas": []
+        }
+      ],
+      "left_only_blocks": [
+        "left:s012:b03"
+      ],
+      "right_only_blocks": [
+        "right:s012:b00",
+        "right:s012:b01i01",
+        "right:s012:b02",
+        "right:s012:b04",
+        "right:s012:b07"
+      ]
+    },
+    {
+      "left_id": "left:s013",
+      "right_id": "right:s006",
+      "score": 0.9189,
+      "cosine": 0.5321999788284302,
+      "lexical": 0.338302880525589,
+      "relation": "weak",
+      "moved": true,
+      "block_matches": [
+        {
+          "left_id": "left:s013:b00",
+          "right_id": "right:s006:b00",
+          "score": 0.9836,
+          "cosine": 0.46950000524520874,
+          "lexical": 0.3528907001018524,
+          "inline_diff": "~~Portfolio loss rate~~ **The product $PD \\times EAD \\times LGD$ of separately estimated factor means** is **not** the ~~balance-weighted aggregate~~ **mean** of ~~segment loss rates. Because~~ the **product. Under stress all three** factors ~~are estimated separately,~~ **deteriorate together, and** the ~~multiplicative~~ **product** form understates ~~loss in stressed conditions, where PD, EAD and LGD deteriorate jointly. CLRM addresses~~ **loss. The incumbent handles** this with ~~an explicit overlay: under any scenario in which~~ **a judgmental additive overlay applied when** projected ~~$\\Delta u_t$~~ **unemployment change** exceeds 200 basis ~~points, segment LGD~~ **points. HELIX instead conditions all three factors on the same macroeconomic path, so that the covariance** is ~~increased~~ **generated** by ~~a scenario-specific additive factor $\\lambda(\\Delta u)$ calibrated to~~ the ~~2009-2010 realized recovery shortfall, and CCF in the >90% utilization band is raised by 4 percentage points. The overlay is documented as a~~ model ~~adjustment~~ rather than ~~as an estimated parameter and is re-approved annually.~~ **supplied by committee.**",
+          "numeric_deltas": []
+        }
+      ],
+      "left_only_blocks": [],
+      "right_only_blocks": []
+    },
+    {
+      "left_id": "left:s016",
+      "right_id": "right:s011",
+      "score": 0.948,
+      "cosine": 0.652899980545044,
+      "lexical": 0.1011822298169136,
+      "relation": "merge",
+      "moved": false,
+      "block_matches": [
+        {
+          "left_id": "left:s016:b01",
+          "right_id": "right:s011:b05",
+          "score": 0.985,
+          "cosine": 0.5336999893188477,
+          "lexical": 0.13132956624031067,
+          "inline_diff": "| ~~Utilization band~~ **Method** | ~~CCF~~ **MAE (% of limit)** | ~~95% CI~~ **Bias (% of limit)** | ~~Defaults in sample~~ **Correlation with realized EAD** | |---|---|---|---| | ~~0-25%~~ **Fixed CCF by utilization band** | ~~0.184~~ **7.9** | ~~[0.171, 0.197]~~ **-1.4** | ~~41,208~~ **0.781** | | ~~25-60%~~ **Fixed CCF by full segment cross** | ~~0.327~~ **7.1** | ~~[0.311, 0.343]~~ **-1.1** | ~~78,611~~ **0.804** | | ~~60-90%~~ **HELIX simulated path** | ~~0.541~~ **3.2** | ~~[0.522, 0.560]~~ **+0.3** | ~~112,945~~ **0.918** | ~~| >90% | 0.806 | [0.781, 0.831] | 96,330 |~~",
+          "numeric_deltas": [
+            {
+              "from": "0.184",
+              "to": "7.9"
+            },
+            {
+              "from": "41,208",
+              "to": "0.781"
+            },
+            {
+              "from": "0.327",
+              "to": "7.1"
+            },
+            {
+              "from": "78,611",
+              "to": "0.804"
+            },
+            {
+              "from": "0.541",
+              "to": "3.2"
+            },
+            {
+              "from": "112,945",
+              "to": "0.918"
+            }
+          ]
+        }
+      ],
+      "left_only_blocks": [
+        "left:s016:b02"
+      ],
+      "right_only_blocks": [
+        "right:s011:b00",
+        "right:s011:b01",
+        "right:s011:b02",
+        "right:s011:b03",
+        "right:s011:b06"
+      ]
+    },
+    {
+      "left_id": "left:s017",
+      "right_id": "right:s012",
+      "score": 0.9636,
+      "cosine": 0.6338000297546387,
+      "lexical": 0.13488422334194183,
+      "relation": "merge",
+      "moved": false,
+      "block_matches": [
+        {
+          "left_id": "left:s017:b01",
+          "right_id": "right:s012:b01i00",
+          "score": 0.9816,
+          "cosine": 0.5113000273704529,
+          "lexical": 0.12517225742340088,
+          "inline_diff": "~~| Variable | Coefficient | Std. error | |---|---|---| | Intercept | -1.9104 | 0.0662 | | Agency placement (vs. internal) | -0.4188 | 0.0241 | | Debt sale (vs. internal) | -0.7733 | 0.0309 | | $\\ln EAD$ | -0.1526 | 0.0188 | | Bankruptcy~~ ****Total nominal recovery**, by beta regression on resolution channel, exposure, bankruptcy** flag ~~| -0.9014 | 0.0455 | | Stage~~ **and refreshed bureau score** at ~~charge-off (180+ vs. other) | -0.2107 | 0.0233 | | Precision $\\phi$ | 4.81 | 0.09 |~~ **charge-off.**",
+          "numeric_deltas": []
+        },
+        {
+          "left_id": "left:s017:b02",
+          "right_id": "right:s012:b06",
+          "score": 0.9892,
+          "cosine": 0.5454999804496765,
+          "lexical": 0.15944592654705048,
+          "inline_diff": "~~Implied portfolio~~ **| Channel | Share of charge-offs | Nominal recovery | Mean months to 80% of recovery | Discounted** LGD ~~is 0.853, i.e. a mean ultimate recovery of 14.7 cents on the dollar.~~ **| |---|---|---|---|---| | Internal collections | 34% | 21.1% | 9.4 | 0.812 | | Agency placement | 41% | 13.8% | 17.2 | 0.881 | | Debt sale | 19% | 8.2% | 1.0 | 0.919 | |** Bankruptcy ~~charge-offs recover 5.1 cents; internally worked non-bankruptcy accounts recover 21.3 cents.~~ **| 6% | 4.9% | 22.6 | 0.960 | | **Weighted** | **100%** | **14.9%** | **13.1** | **0.879** |**",
+          "numeric_deltas": [
+            {
+              "from": "0.853,",
+              "to": "34%"
+            },
+            {
+              "from": "14.7",
+              "to": "21.1%"
+            },
+            {
+              "from": "5.1",
+              "to": "6%"
+            },
+            {
+              "from": "21.3",
+              "to": "4.9%"
+            }
+          ]
+        }
+      ],
+      "left_only_blocks": [],
+      "right_only_blocks": [
+        "right:s012:b00",
+        "right:s012:b01i01",
+        "right:s012:b02",
+        "right:s012:b03",
+        "right:s012:b04",
+        "right:s012:b07"
+      ]
+    },
+    {
+      "left_id": "left:s021",
+      "right_id": "right:s014",
+      "score": 0.9104,
+      "cosine": 0.5250999927520752,
+      "lexical": 0.23465444147586823,
+      "relation": "weak",
+      "moved": true,
+      "block_matches": [
+        {
+          "left_id": "left:s021:b01",
+          "right_id": "right:s014:b07",
+          "score": 0.999,
+          "cosine": 0.6126000285148621,
+          "lexical": 0.46917271614074707,
+          "inline_diff": "| Period | ~~Predicted~~ **Incumbent predicted | HELIX predicted** | Realized | ~~Error~~ **HELIX error** (bps) | ~~|---|---|---|---|~~ **|---|---|---|---|---|** | ~~2021~~ **2022H1** | ~~2.29%~~ **2.81%** | ~~2.11%~~ **2.94%** | ~~+18~~ **3.02% | -8** | | ~~2022~~ **2022H2** | ~~2.96%~~ **3.11%** | ~~3.08%~~ **3.19%** | ~~-12~~ **3.14% | +5** | | ~~2023~~ **2023H1** | ~~3.58%~~ **3.44%** | ~~3.41%~~ **3.31%** | ~~+17~~ **3.28% | +3** | | ~~Mean absolute error~~ **2023H2** | **3.72%** | **3.57%** | ~~14~~ **3.53%** | **+4 |**",
+          "numeric_deltas": [
+            {
+              "from": "2.29%",
+              "to": "2.81%"
+            },
+            {
+              "from": "2.11%",
+              "to": "2.94%"
+            },
+            {
+              "from": "+18",
+              "to": "3.02%"
+            },
+            {
+              "from": "2.96%",
+              "to": "3.11%"
+            },
+            {
+              "from": "3.08%",
+              "to": "3.19%"
+            },
+            {
+              "from": "-12",
+              "to": "3.14%"
+            },
+            {
+              "from": "3.58%",
+              "to": "3.44%"
+            },
+            {
+              "from": "3.41%",
+              "to": "3.31%"
+            },
+            {
+              "from": "+17",
+              "to": "3.28%"
+            },
+            {
+              "from": "14",
+              "to": "3.53%"
+            }
+          ]
+        }
+      ],
+      "left_only_blocks": [
+        "left:s021:b02"
+      ],
+      "right_only_blocks": [
+        "right:s014:b01",
+        "right:s014:b02",
+        "right:s014:b04",
+        "right:s014:b05"
+      ]
+    },
+    {
+      "left_id": "left:s022",
+      "right_id": "right:s006",
+      "score": 0.9418,
+      "cosine": 0.5662000179290771,
+      "lexical": 0.23143525421619415,
+      "relation": "merge",
+      "moved": true,
+      "block_matches": [
+        {
+          "left_id": "left:s022:b00",
+          "right_id": "right:s006:b00",
+          "score": 0.995,
+          "cosine": 0.5616999864578247,
+          "lexical": 0.24919071793556213,
+          "inline_diff": "~~To quantify~~ **The product $PD \\times EAD \\times LGD$ of separately estimated factor means is not** the ~~bias from factor separability, we computed~~ **mean of** the ~~realized loss rate directly as $\\sum D_i E_i (1-R_i) / \\sum B_i$~~ **product. Under stress all three factors deteriorate together,** and ~~compared it to~~ the ~~product of realized factor means. The~~ product form understates ~~realized loss~~ **loss. The incumbent handles this with a judgmental additive overlay applied when projected unemployment change exceeds 200 basis points. HELIX instead conditions all three factors on the same macroeconomic path, so that the covariance is generated** by ~~6 to 9 basis points in benign quarters and~~ **the model rather than supplied** by ~~41 basis points in 2009Q4, the worst quarter in the sample. The stress overlay of Section 4.5 contributes 55 basis points at a 200 bps unemployment shock, so the overlay is conservative relative to the measured bias at that severity. We have not tested severities beyond the 2009 experience.~~ **committee.**",
+          "numeric_deltas": []
+        }
+      ],
+      "left_only_blocks": [],
+      "right_only_blocks": []
+    },
+    {
+      "left_id": "left:s024",
+      "right_id": "right:s002",
+      "score": 0.971,
+      "cosine": 0.7253999710083008,
+      "lexical": 0.11033900082111359,
+      "relation": "split",
+      "moved": true,
+      "block_matches": [
+        {
+          "left_id": "left:s024:b00i00",
+          "right_id": "right:s002:b00",
+          "score": 0.9753,
+          "cosine": 0.5242000222206116,
+          "lexical": 0.10219202935695648,
+          "inline_diff": "~~**No lifetime horizon.** CLRM produces~~ **HELIX estimates credit card credit losses account by account and month by month over the full behavioural life of each account, rather than producing** a **single** twelve-month loss ~~rate. Lifetime expected credit loss~~ **rate** for ~~accounting purposes~~ **a risk segment. Loss** is ~~derived by applying an externally specified multiple to the twelve-month output. This is an acknowledged weakness and the primary driver of the challenger program.~~ **assembled as a discounted sum over monthly survival-weighted default events:**",
+          "numeric_deltas": []
+        },
+        {
+          "left_id": "left:s024:b00i01",
+          "right_id": "right:s002:b04i00",
+          "score": 0.8054,
+          "cosine": 0.3995000123977661,
+          "lexical": 0.025005152449011803,
+          "inline_diff": "",
+          "numeric_deltas": []
+        },
+        {
+          "left_id": "left:s024:b00i02",
+          "right_id": "right:s002:b04i03",
+          "score": 0.9956,
+          "cosine": 0.6850000023841858,
+          "lexical": 0.16949930787086487,
+          "inline_diff": "~~**Undiscounted recoveries.** Nominal treatment of collections overstates~~ **Severity is estimated as a *discounted*** recovery ~~value and therefore understates LGD. At a 6% discount~~ **curve. Discounting at the effective interest** rate ~~and the observed collection timing profile, discounted~~ **raises portfolio** LGD ~~would be approximately 0.878 rather than 0.853, raising portfolio loss rate by roughly 12 basis points.~~ **from 0.851 (nominal) to **0.879**.**",
+          "numeric_deltas": [
+            {
+              "from": "0.878",
+              "to": "0.851"
+            }
+          ]
+        }
+      ],
+      "left_only_blocks": [
+        "left:s024:b00i03",
+        "left:s024:b00i04"
+      ],
+      "right_only_blocks": [
+        "right:s002:b01",
+        "right:s002:b02",
+        "right:s002:b03",
+        "right:s002:b04i01",
+        "right:s002:b04i02",
+        "right:s002:b04i04",
+        "right:s002:b05"
+      ]
+    },
+    {
+      "left_id": "left:s024",
+      "right_id": "right:s005",
+      "score": 0.971,
+      "cosine": 0.6545000076293945,
+      "lexical": 0.13527855277061462,
+      "relation": "split",
+      "moved": true,
+      "block_matches": [
+        {
+          "left_id": "left:s024:b00i01",
+          "right_id": "right:s005:b01i01",
+          "score": 0.9998,
+          "cosine": 0.6909999847412109,
+          "lexical": 0.36684396862983704,
+          "inline_diff": "~~**Segment drift.** Segment definitions are refit on~~ ****Population shift is invisible.** When the composition of** a ~~multi-year cycle. Between refits, population shift within bands~~ **segment drifts, a segment-constant PD** is ~~monitored but not corrected.~~ **stale by construction.** The **incumbent's own documentation reports a** population stability index **of 0.14** on the ~~behaviour~~ score ~~distribution reached 0.14 in 2023Q4,~~ **distribution,** above ~~the 0.10~~ **its** warning ~~threshold.~~ **threshold, with no correction mechanism.**",
+          "numeric_deltas": []
+        }
+      ],
+      "left_only_blocks": [
+        "left:s024:b00i00",
+        "left:s024:b00i02",
+        "left:s024:b00i03",
+        "left:s024:b00i04"
+      ],
+      "right_only_blocks": [
+        "right:s005:b00",
+        "right:s005:b01i00"
+      ]
+    },
+    {
+      "left_id": "left:s024",
+      "right_id": "right:s012",
+      "score": 0.9867,
+      "cosine": 0.6984999775886536,
+      "lexical": 0.15629461407661438,
+      "relation": "split",
+      "moved": false,
+      "block_matches": [
+        {
+          "left_id": "left:s024:b00i02",
+          "right_id": "right:s012:b07",
+          "score": 0.9952,
+          "cosine": 0.5559999942779541,
+          "lexical": 0.2959286868572235,
+          "inline_diff": "~~**Undiscounted recoveries.** Nominal treatment~~ **The 2.8 percentage point gap between nominal and discounted portfolio LGD is not a modelling refinement; it is a direct correction** of ~~collections overstates recovery value and therefore understates LGD. At a 6% discount~~ **an understatement in the incumbent, worth approximately 12 basis points of twelve-month loss** rate and ~~the observed collection timing profile, discounted LGD would be approximately 0.878 rather than 0.853, raising portfolio~~ **26 basis points of lifetime** loss ~~rate by roughly 12 basis points.~~ **rate.**",
+          "numeric_deltas": [
+            {
+              "from": "6%",
+              "to": "12"
+            },
+            {
+              "from": "0.878",
+              "to": "26"
+            }
+          ]
+        }
+      ],
+      "left_only_blocks": [
+        "left:s024:b00i00",
+        "left:s024:b00i01",
+        "left:s024:b00i03",
+        "left:s024:b00i04"
+      ],
+      "right_only_blocks": [
+        "right:s012:b00",
+        "right:s012:b01i00",
+        "right:s012:b01i01",
+        "right:s012:b02",
+        "right:s012:b03",
+        "right:s012:b04",
+        "right:s012:b06"
+      ]
+    },
+    {
+      "left_id": "left:s026",
+      "right_id": "right:s020",
+      "score": 0.1333,
+      "cosine": 0.0,
+      "lexical": 0.0,
+      "relation": "1:1",
+      "moved": false,
+      "block_matches": [],
+      "left_only_blocks": [],
+      "right_only_blocks": []
+    }
+  ],
+  "left_only": [
+    "left:s003",
+    "left:s005",
+    "left:s006",
+    "left:s015",
+    "left:s018",
+    "left:s020",
+    "left:s023",
+    "left:s025",
+    "left:s027",
+    "left:s028",
+    "left:s004",
+    "left:s008",
+    "left:s014",
+    "left:s019"
+  ],
+  "right_only": [
+    "right:s009",
+    "right:s013",
+    "right:s016",
+    "right:s017",
+    "right:s018",
+    "right:s019",
+    "right:s022",
+    "right:s023",
+    "right:s024",
+    "right:s003",
+    "right:s008",
+    "right:s015",
+    "right:s021"
+  ],
+  "numerals": {
+    "agreements": [
+      {
+        "quantity": "above distribution index population score stability",
+        "left": "0.14",
+        "left_section": "7. Limitations and Known Findings",
+        "left_line": 253,
+        "left_source": "prose",
+        "right": "0.14",
+        "right_section": "The aggregation problem",
+        "right_line": 47,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 24.14,
+        "agrees": true
+      },
+      {
+        "quantity": "exceeds overlay projected",
+        "left": "200 bps",
+        "left_section": "4.5 Aggregation and stress overlay",
+        "left_line": 150,
+        "left_source": "prose",
+        "right": "200 bps",
+        "right_section": "The factor-correlation problem",
+        "right_line": 52,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 13.8,
+        "agrees": true
+      },
+      {
+        "quantity": "balance baseline build-up loss portfolio rate",
+        "left": "100%",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "100%",
+        "right_section": "Results",
+        "right_line": 150,
+        "right_source": "table",
+        "relative_diff": 0.0,
+        "evidence": 12.58,
+        "agrees": true
+      },
+      {
+        "quantity": "bankruptcy due past",
+        "left": "180 day",
+        "left_section": "3.3 Default definition",
+        "left_line": 88,
+        "left_source": "prose",
+        "right": "180 day",
+        "right_section": "Box 1 \u2014 What HELIX does not change",
+        "right_line": 56,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 10.54,
+        "agrees": true
+      },
+      {
+        "quantity": "approximately lgd loss portfolio rate",
+        "left": "12 bps",
+        "left_section": "7. Limitations and Known Findings",
+        "left_line": 253,
+        "left_source": "prose",
+        "right": "12 bps",
+        "right_section": "Loss severity",
+        "right_line": 142,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 10.29,
+        "agrees": true
+      },
+      {
+        "quantity": "discounted lgd portfolio rate",
+        "left": "0.853",
+        "left_section": "7. Limitations and Known Findings",
+        "left_line": 253,
+        "left_source": "prose",
+        "right": "0.851",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.00234,
+        "evidence": 7.87,
+        "agrees": true
+      },
+      {
+        "quantity": "overlay unemployment",
+        "left": "200 bps",
+        "left_section": "6.3 Independence-assumption bias",
+        "left_line": 243,
+        "left_source": "prose",
+        "right": "200 bps",
+        "right_section": "The factor-correlation problem",
+        "right_line": 52,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 7.43,
+        "agrees": true
+      },
+      {
+        "quantity": "month rate recovery",
+        "left": "36",
+        "left_section": "2. Related Work",
+        "left_line": 51,
+        "left_source": "prose",
+        "right": "36",
+        "right_section": "Box 1 \u2014 What HELIX does not change",
+        "right_line": 56,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 6.21,
+        "agrees": true
+      },
+      {
+        "quantity": "backtest predicted table",
+        "left": "3.58%",
+        "left_section": "6.2 Calibration and backtest",
+        "left_line": 230,
+        "left_source": "table",
+        "right": "3.57%",
+        "right_section": "Results",
+        "right_line": 174,
+        "right_source": "table",
+        "relative_diff": 0.00279,
+        "evidence": 6.15,
+        "agrees": true
+      },
+      {
+        "quantity": "discounted lgd",
+        "left": "0.878",
+        "left_section": "7. Limitations and Known Findings",
+        "left_line": 253,
+        "left_source": "prose",
+        "right": "0.879",
+        "right_section": "Loss severity",
+        "right_line": 132,
+        "right_source": "table",
+        "relative_diff": 0.00114,
+        "evidence": 5.67,
+        "agrees": true
+      },
+      {
+        "quantity": "band score utilization",
+        "left": "700",
+        "left_section": "3.2 Segmentation scheme",
+        "left_line": 80,
+        "left_source": "prose",
+        "right": "700",
+        "right_section": "The aggregation problem",
+        "right_line": 47,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 4.84,
+        "agrees": true
+      },
+      {
+        "quantity": "lgd portfolio rate",
+        "left": "0.851",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "0.851",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 4.73,
+        "agrees": true
+      },
+      {
+        "quantity": "lgd portfolio rate",
+        "left": "0.878",
+        "left_section": "7. Limitations and Known Findings",
+        "left_line": 253,
+        "left_source": "prose",
+        "right": "0.879",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.00114,
+        "evidence": 4.73,
+        "agrees": true
+      },
+      {
+        "quantity": "recovery ultimate",
+        "left": "36 month",
+        "left_section": "4.4 Loss given default",
+        "left_line": 140,
+        "left_source": "prose",
+        "right": "36 month",
+        "right_section": "Loss severity",
+        "right_line": 121,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 4.65,
+        "agrees": true
+      },
+      {
+        "quantity": "recovery ultimate",
+        "left": "36 month",
+        "left_section": "Appendix B. Variable Dictionary",
+        "left_line": 305,
+        "left_source": "table",
+        "right": "36 month",
+        "right_section": "Loss severity",
+        "right_line": 121,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 4.65,
+        "agrees": true
+      },
+      {
+        "quantity": "against realized",
+        "left": "5%",
+        "left_section": "6.2 Calibration and backtest",
+        "left_line": 239,
+        "left_source": "prose",
+        "right": "5%",
+        "right_section": "Required controls if promoted",
+        "right_line": 207,
+        "right_source": "table",
+        "relative_diff": 0.0,
+        "evidence": 4.63,
+        "agrees": true
+      },
+      {
+        "quantity": "basis loss",
+        "left": "9 bps",
+        "left_section": "6.3 Independence-assumption bias",
+        "left_line": 243,
+        "left_source": "prose",
+        "right": "9 bps",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 4.54,
+        "agrees": true
+      },
+      {
+        "quantity": "lgd portfolio",
+        "left": "0.853",
+        "left_section": "5.3 LGD estimates",
+        "left_line": 202,
+        "left_source": "prose",
+        "right": "0.851",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.00234,
+        "evidence": 3.81,
+        "agrees": true
+      },
+      {
+        "quantity": "ccf table",
+        "left": "0.806",
+        "left_section": "5.2 CCF estimates",
+        "left_line": 177,
+        "left_source": "table",
+        "right": "0.804",
+        "right_section": "Exposure simulation",
+        "right_line": 109,
+        "right_source": "table",
+        "relative_diff": 0.00248,
+        "evidence": 3.55,
+        "agrees": true
+      },
+      {
+        "quantity": "loss portfolio rate",
+        "left": "4.07%",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "4.07%",
+        "right_section": "Annex 2 \u00b7 Reconciliation to the incumbent",
+        "right_line": 256,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 3.45,
+        "agrees": true
+      },
+      {
+        "quantity": "loss portfolio rate",
+        "left": "8.91%",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "8.94%",
+        "right_section": "Where HELIX is worse than the incumbent",
+        "right_line": 191,
+        "right_source": "prose",
+        "relative_diff": 0.00336,
+        "evidence": 3.45,
+        "agrees": true
+      },
+      {
+        "quantity": "band score",
+        "left": "700",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "700",
+        "right_section": "The aggregation problem",
+        "right_line": 47,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 3.38,
+        "agrees": true
+      },
+      {
+        "quantity": "share table",
+        "left": "100%",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "100%",
+        "right_section": "Loss severity",
+        "right_line": 132,
+        "right_source": "table",
+        "relative_diff": 0.0,
+        "evidence": 3.22,
+        "agrees": true
+      },
+      {
+        "quantity": "band utilization",
+        "left": "25",
+        "left_section": "5.2 CCF estimates",
+        "left_line": 177,
+        "left_source": "table",
+        "right": "25",
+        "right_section": "The aggregation problem",
+        "right_line": 47,
+        "right_source": "prose",
+        "relative_diff": 0.0,
+        "evidence": 2.89,
+        "agrees": true
+      },
+      {
+        "quantity": "loss rate",
+        "left": "8.91%",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "8.94%",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.00336,
+        "evidence": 2.16,
+        "agrees": true
+      }
+    ],
+    "disagreements": [
+      {
+        "quantity": "above distribution index population score stability",
+        "left": "0.10",
+        "left_section": "7. Limitations and Known Findings",
+        "left_line": 253,
+        "left_source": "prose",
+        "right": "0.14",
+        "right_section": "The aggregation problem",
+        "right_line": 47,
+        "right_source": "prose",
+        "relative_diff": 0.28571,
+        "evidence": 24.14,
+        "agrees": false
+      },
+      {
+        "quantity": "balance baseline build-up loss rate share",
+        "left": "11.4%",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "11.2%",
+        "right_section": "Results",
+        "right_line": 150,
+        "right_source": "table",
+        "relative_diff": 0.01754,
+        "evidence": 11.29,
+        "agrees": false
+      },
+      {
+        "quantity": "months rises run-up utilization",
+        "left": "0.95",
+        "left_section": "2. Related Work",
+        "left_line": 49,
+        "left_source": "prose",
+        "right": "0.97",
+        "right_section": "Exposure simulation",
+        "right_line": 107,
+        "right_source": "prose",
+        "relative_diff": 0.02062,
+        "evidence": 10.82,
+        "agrees": false
+      },
+      {
+        "quantity": "absolute error reproduces",
+        "left": "3.41%",
+        "left_section": "Abstract",
+        "left_line": 15,
+        "left_source": "prose",
+        "right": "3.2%",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.06158,
+        "evidence": 10.48,
+        "agrees": false
+      },
+      {
+        "quantity": "basis loss points",
+        "left": "41 bps",
+        "left_section": "6.3 Independence-assumption bias",
+        "left_line": 243,
+        "left_source": "prose",
+        "right": "31 bps",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.2439,
+        "evidence": 7.87,
+        "agrees": false
+      },
+      {
+        "quantity": "basis loss points",
+        "left": "41 bps",
+        "left_section": "6.3 Independence-assumption bias",
+        "left_line": 243,
+        "left_source": "prose",
+        "right": "26 bps",
+        "right_section": "Loss severity",
+        "right_line": 142,
+        "right_source": "prose",
+        "relative_diff": 0.36585,
+        "evidence": 7.87,
+        "agrees": false
+      },
+      {
+        "quantity": "discounted lgd portfolio rate",
+        "left": "0.878",
+        "left_section": "7. Limitations and Known Findings",
+        "left_line": 253,
+        "left_source": "prose",
+        "right": "0.851",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.03075,
+        "evidence": 7.87,
+        "agrees": false
+      },
+      {
+        "quantity": "baseline build-up loss portfolio rate table",
+        "left": "4.07%",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "4.11%",
+        "right_section": "Results",
+        "right_line": 150,
+        "right_source": "table",
+        "relative_diff": 0.00973,
+        "evidence": 7.29,
+        "agrees": false
+      },
+      {
+        "quantity": "basis points",
+        "left": "55 bps",
+        "left_section": "6.3 Independence-assumption bias",
+        "left_line": 243,
+        "left_source": "prose",
+        "right": "31 bps",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.43636,
+        "evidence": 6.63,
+        "agrees": false
+      },
+      {
+        "quantity": "band ccf table utilization",
+        "left": "0.806",
+        "left_section": "5.2 CCF estimates",
+        "left_line": 177,
+        "left_source": "table",
+        "right": "0.781",
+        "right_section": "Exposure simulation",
+        "right_line": 109,
+        "right_source": "table",
+        "relative_diff": 0.03102,
+        "evidence": 6.44,
+        "agrees": false
+      },
+      {
+        "quantity": "backtest predicted table",
+        "left": "2.96%",
+        "left_section": "6.2 Calibration and backtest",
+        "left_line": 230,
+        "left_source": "table",
+        "right": "2.94%",
+        "right_section": "Results",
+        "right_line": 174,
+        "right_source": "table",
+        "relative_diff": 0.00676,
+        "evidence": 6.15,
+        "agrees": false
+      },
+      {
+        "quantity": "baseline build-up loss rate table",
+        "left": "5.29%",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "5.38%",
+        "right_section": "Results",
+        "right_line": 150,
+        "right_source": "table",
+        "relative_diff": 0.01673,
+        "evidence": 6.0,
+        "agrees": false
+      },
+      {
+        "quantity": "ccf ead",
+        "left": "0.90",
+        "left_section": "Appendix A. Delinquent-Account Roll-Rate Treatment",
+        "left_line": 301,
+        "left_source": "prose",
+        "right": "0.804",
+        "right_section": "Exposure simulation",
+        "right_line": 109,
+        "right_source": "table",
+        "relative_diff": 0.10667,
+        "evidence": 5.86,
+        "agrees": false
+      },
+      {
+        "quantity": "band ccf utilization",
+        "left": "0.806",
+        "left_section": "5.2 CCF estimates",
+        "left_line": 186,
+        "left_source": "prose",
+        "right": "0.781",
+        "right_section": "Exposure simulation",
+        "right_line": 109,
+        "right_source": "table",
+        "relative_diff": 0.03102,
+        "evidence": 5.82,
+        "agrees": false
+      },
+      {
+        "quantity": "discounted lgd",
+        "left": "0.853",
+        "left_section": "7. Limitations and Known Findings",
+        "left_line": 253,
+        "left_source": "prose",
+        "right": "0.879",
+        "right_section": "Loss severity",
+        "right_line": 132,
+        "right_source": "table",
+        "relative_diff": 0.02958,
+        "evidence": 5.67,
+        "agrees": false
+      },
+      {
+        "quantity": "months rises",
+        "left": "0.95",
+        "left_section": "2. Related Work",
+        "left_line": 49,
+        "left_source": "prose",
+        "right": "0.96",
+        "right_section": "Exposure simulation",
+        "right_line": 107,
+        "right_source": "prose",
+        "relative_diff": 0.01042,
+        "evidence": 5.65,
+        "agrees": false
+      },
+      {
+        "quantity": "backtest realized table",
+        "left": "3.08%",
+        "left_section": "6.2 Calibration and backtest",
+        "left_line": 230,
+        "left_source": "table",
+        "right": "3.14%",
+        "right_section": "Results",
+        "right_line": 174,
+        "right_source": "table",
+        "relative_diff": 0.01911,
+        "evidence": 5.46,
+        "agrees": false
+      },
+      {
+        "quantity": "predicted realized",
+        "left": "5%",
+        "left_section": "6.2 Calibration and backtest",
+        "left_line": 239,
+        "left_source": "prose",
+        "right": "3.72%",
+        "right_section": "Results",
+        "right_line": 174,
+        "right_source": "table",
+        "relative_diff": 0.256,
+        "evidence": 5.32,
+        "agrees": false
+      },
+      {
+        "quantity": "nominal recovery",
+        "left": "6%",
+        "left_section": "7. Limitations and Known Findings",
+        "left_line": 253,
+        "left_source": "prose",
+        "right": "4.9%",
+        "right_section": "Loss severity",
+        "right_line": 132,
+        "right_source": "table",
+        "relative_diff": 0.18333,
+        "evidence": 5.29,
+        "agrees": false
+      },
+      {
+        "quantity": "default gini",
+        "left": "0.612",
+        "left_section": "Abstract",
+        "left_line": 15,
+        "left_source": "prose",
+        "right": "0.606",
+        "right_section": "Results",
+        "right_line": 163,
+        "right_source": "table",
+        "relative_diff": 0.0098,
+        "evidence": 5.26,
+        "agrees": false
+      },
+      {
+        "quantity": "run-up utilization",
+        "left": "0.806",
+        "left_section": "5.2 CCF estimates",
+        "left_line": 186,
+        "left_source": "prose",
+        "right": "0.97",
+        "right_section": "Exposure simulation",
+        "right_line": 107,
+        "right_source": "prose",
+        "relative_diff": 0.16907,
+        "evidence": 5.17,
+        "agrees": false
+      },
+      {
+        "quantity": "loss mean rate table",
+        "left": "14",
+        "left_section": "6.2 Calibration and backtest",
+        "left_line": 230,
+        "left_source": "table",
+        "right": "14.1",
+        "right_section": "Results",
+        "right_line": 150,
+        "right_source": "table",
+        "relative_diff": 0.00709,
+        "evidence": 5.16,
+        "agrees": false
+      },
+      {
+        "quantity": "balance loss rate",
+        "left": "8.1%",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "8.94%",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.09396,
+        "evidence": 4.85,
+        "agrees": false
+      },
+      {
+        "quantity": "band score utilization",
+        "left": "779",
+        "left_section": "3.2 Segmentation scheme",
+        "left_line": 80,
+        "left_source": "prose",
+        "right": "739",
+        "right_section": "The aggregation problem",
+        "right_line": 47,
+        "right_source": "prose",
+        "relative_diff": 0.05135,
+        "evidence": 4.84,
+        "agrees": false
+      },
+      {
+        "quantity": "backtest realized",
+        "left": "3.41%",
+        "left_section": "6.2 Calibration and backtest",
+        "left_line": 230,
+        "left_source": "table",
+        "right": "5%",
+        "right_section": "Required controls if promoted",
+        "right_line": 207,
+        "right_source": "table",
+        "relative_diff": 0.318,
+        "evidence": 4.84,
+        "agrees": false
+      },
+      {
+        "quantity": "lgd portfolio rate",
+        "left": "0.858",
+        "left_section": "5.4 Assembled loss rate",
+        "left_line": 206,
+        "left_source": "table",
+        "right": "0.851",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.00816,
+        "evidence": 4.73,
+        "agrees": false
+      },
+      {
+        "quantity": "lgd portfolio rate",
+        "left": "0.853",
+        "left_section": "7. Limitations and Known Findings",
+        "left_line": 253,
+        "left_source": "prose",
+        "right": "0.879",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.02958,
+        "evidence": 4.73,
+        "agrees": false
+      },
+      {
+        "quantity": "basis rate",
+        "left": "8.4%",
+        "left_section": "3.3 Default definition",
+        "left_line": 88,
+        "left_source": "prose",
+        "right": "8.94%",
+        "right_section": "Where HELIX is worse than the incumbent",
+        "right_line": 191,
+        "right_source": "prose",
+        "relative_diff": 0.0604,
+        "evidence": 4.21,
+        "agrees": false
+      },
+      {
+        "quantity": "loss rate twelve-month",
+        "left": "20 bps",
+        "left_section": "8. Conclusion",
+        "left_line": 263,
+        "left_source": "prose",
+        "right": "26 bps",
+        "right_section": "Loss severity",
+        "right_line": 142,
+        "right_source": "prose",
+        "relative_diff": 0.23077,
+        "evidence": 4.15,
+        "agrees": false
+      },
+      {
+        "quantity": "month rate",
+        "left": "36",
+        "left_section": "2. Related Work",
+        "left_line": 51,
+        "left_source": "prose",
+        "right": "24",
+        "right_section": "Executive Summary",
+        "right_line": 25,
+        "right_source": "prose",
+        "relative_diff": 0.33333,
+        "evidence": 3.92,
+        "agrees": false
+      }
+    ],
+    "left_count": 225,
+    "right_count": 162,
+    "left_internal_inconsistencies": [
+      {
+        "quantity": "achieves coefficient gini segment-level",
+        "a": "0.612",
+        "a_section": "Abstract",
+        "a_line": 15,
+        "a_source": "prose",
+        "b": "0.601",
+        "b_section": "6.1 Discriminatory power",
+        "b_line": 226,
+        "b_source": "prose",
+        "relative_diff": 0.01797,
+        "evidence": 12.73
+      },
+      {
+        "quantity": "error std.",
+        "a": "0.0893",
+        "a_section": "5.1 PD estimates",
+        "a_line": 158,
+        "a_source": "table",
+        "b": "0.09",
+        "b_section": "5.3 LGD estimates",
+        "b_line": 190,
+        "b_source": "table",
+        "relative_diff": 0.00778,
+        "evidence": 7.86
+      },
+      {
+        "quantity": "lgd",
+        "a": "0.851",
+        "a_section": "5.4 Assembled loss rate",
+        "a_line": 206,
+        "a_source": "table",
+        "b": "0.853",
+        "b_section": "7. Limitations and Known Findings",
+        "b_line": 253,
+        "b_source": "prose",
+        "relative_diff": 0.00234,
+        "evidence": 5.97
+      },
+      {
+        "quantity": "gini holdout",
+        "a": "0.598",
+        "a_section": "5.1 PD estimates",
+        "a_line": 173,
+        "a_source": "prose",
+        "b": "0.601",
+        "b_section": "6.1 Discriminatory power",
+        "b_line": 226,
+        "b_source": "prose",
+        "relative_diff": 0.00499,
+        "evidence": 5.59
+      },
+      {
+        "quantity": "behaviour score",
+        "a": "712",
+        "a_section": "3.1 Portfolio description",
+        "a_line": 63,
+        "a_source": "table",
+        "b": "700",
+        "b_section": "3.2 Segmentation scheme",
+        "b_line": 80,
+        "b_source": "prose",
+        "relative_diff": 0.01685,
+        "evidence": 4.32
+      },
+      {
+        "quantity": "score",
+        "a": "712",
+        "a_section": "3.1 Portfolio description",
+        "a_line": 63,
+        "a_source": "table",
+        "b": "700",
+        "b_section": "5.4 Assembled loss rate",
+        "b_line": 206,
+        "b_source": "table",
+        "relative_diff": 0.01685,
+        "evidence": 3.86
+      },
+      {
+        "quantity": "lgd",
+        "a": "0.853",
+        "a_section": "5.3 LGD estimates",
+        "a_line": 202,
+        "a_source": "prose",
+        "b": "0.851",
+        "b_section": "5.4 Assembled loss rate",
+        "b_line": 206,
+        "b_source": "table",
+        "relative_diff": 0.00234,
+        "evidence": 3.81
+      },
+      {
+        "quantity": "score",
+        "a": "779",
+        "a_section": "3.2 Segmentation scheme",
+        "a_line": 80,
+        "a_source": "prose",
+        "b": "780",
+        "b_section": "5.4 Assembled loss rate",
+        "b_line": 206,
+        "b_source": "table",
+        "relative_diff": 0.00128,
+        "evidence": 3.38
+      }
+    ],
+    "right_internal_inconsistencies": [
+      {
+        "quantity": "auc default hazard",
+        "a": "0.847",
+        "a_section": "Executive Summary",
+        "a_line": 25,
+        "a_source": "prose",
+        "b": "0.844",
+        "b_section": "Results",
+        "b_line": 163,
+        "b_source": "table",
+        "relative_diff": 0.00354,
+        "evidence": 8.31
+      },
+      {
+        "quantity": "portfolio",
+        "a": "4.11%",
+        "a_section": "Results",
+        "a_line": 150,
+        "a_source": "table",
+        "b": "4.07%",
+        "b_section": "Annex 2 \u00b7 Reconciliation to the incumbent",
+        "b_line": 256,
+        "b_source": "prose",
+        "relative_diff": 0.00973,
+        "evidence": 5.1
+      },
+      {
+        "quantity": "segment",
+        "a": "0.804",
+        "a_section": "Exposure simulation",
+        "a_line": 109,
+        "a_source": "table",
+        "b": "0.803",
+        "b_section": "Results",
+        "b_line": 163,
+        "b_source": "table",
+        "relative_diff": 0.00124,
+        "evidence": 4.98
+      },
+      {
+        "quantity": "segment",
+        "a": "0.803",
+        "a_section": "Executive Summary",
+        "a_line": 25,
+        "a_source": "prose",
+        "b": "0.804",
+        "b_section": "Exposure simulation",
+        "b_line": 109,
+        "b_source": "table",
+        "relative_diff": 0.00124,
+        "evidence": 4.22
+      },
+      {
+        "quantity": "twelve-month",
+        "a": "2.84%",
+        "a_section": "The aggregation problem",
+        "a_line": 47,
+        "a_source": "prose",
+        "b": "2.81%",
+        "b_section": "Results",
+        "b_line": 174,
+        "b_source": "table",
+        "relative_diff": 0.01056,
+        "evidence": 3.62
+      }
+    ]
+  },
+  "citations": {
+    "left_count": 9,
+    "right_count": 8,
+    "shared": [
+      {
+        "key": "kessler:2020",
+        "left": "Kessler, M., Duan, Y., and Rahimi, S. (2020). Gradient boosting versus scorecards for card default: accuracy, stability and governance. *Journal of Applied Credit Analytics*, 12(4), 415-448.",
+        "right": "Kessler, M., Duan, Y., and Rahimi, S. (2020). Gradient boosting versus scorecards for card default: accuracy, stability and governance. *Journal of Applied Credit Analytics*, 12(4), 415-448.",
+        "left_line": 277,
+        "right_line": 227
+      },
+      {
+        "key": "nwosu:2019",
+        "left": "Nwosu, C. (2019). Discounting post-default collections in unsecured retail portfolios. *Journal of Credit Risk Modelling*, 15(1), 1-24.",
+        "right": "Nwosu, C. (2019). Discounting post-default collections in unsecured retail portfolios. *Journal of Credit Risk Modelling*, 15(1), 1-24.",
+        "left_line": 281,
+        "right_line": 229
+      }
+    ],
+    "left_only": [
+      {
+        "key": "altman:1968",
+        "surname": "Altman",
+        "year": "1968",
+        "text": "Altman, E. (1968). Financial ratios, discriminant analysis and the prediction of corporate bankruptcy. *Journal of Finance*, 23(4), 589-609.",
+        "line": 269
+      },
+      {
+        "key": "brakefield:2013",
+        "surname": "Brakefield",
+        "year": "2013",
+        "text": "Brakefield, D., and Sotomayor, L. (2013). Beta regression for recovery rates on charged-off unsecured consumer debt. *Journal of Credit Risk Modelling*, 9(2), 33-61.",
+        "line": 271
+      },
+      {
+        "key": "delacroix:2011",
+        "surname": "Delacroix",
+        "year": "2011",
+        "text": "Delacroix, H., and Whitmore, J. (2011). Behavioural predictors of revolving credit default at short horizons. *Review of Retail Finance*, 14(3), 201-229.",
+        "line": 273
+      },
+      {
+        "key": "ferreira-lopes:2014",
+        "surname": "Ferreira-Lopes",
+        "year": "2014",
+        "text": "Ferreira-Lopes, A. (2014). Exposure run-up on committed revolving retail lines. *Quantitative Banking Studies*, 6(1), 77-104.",
+        "line": 275
+      },
+      {
+        "key": "marchetti:2016",
+        "surname": "Marchetti",
+        "year": "2016",
+        "text": "Marchetti, G. (2016). Aggregation loss in segment-level retail credit scoring. *European Journal of Risk Measurement*, 19(2), 155-180.",
+        "line": 279
+      },
+      {
+        "key": "thomas:2000",
+        "surname": "Thomas",
+        "year": "2000",
+        "text": "Thomas, L. (2000). A survey of credit and behavioural scoring. *International Journal of Forecasting*, 16(2), 149-172.",
+        "line": 283
+      },
+      {
+        "key": "zhou:2009",
+        "surname": "Zhou",
+        "year": "2009",
+        "text": "Zhou, K., and Aaltonen, R. (2009). Credit conversion factors for committed corporate facilities. *Banking and Capital Review*, 4(2), 121-149.",
+        "line": 285
+      }
+    ],
+    "right_only": [
+      {
+        "key": "aziz:2018",
+        "surname": "Aziz",
+        "year": "2018",
+        "text": "Aziz, N., and Lindqvist, P. (2018). *Discrete-time survival models for revolving consumer credit.* Nordic Journal of Financial Econometrics, 7(2), 88-119.",
+        "line": 221
+      },
+      {
+        "key": "cerqueira:2021",
+        "surname": "Cerqueira",
+        "year": "2021",
+        "text": "Cerqueira, T., and Wasserman, H. (2021). *Gradient boosting under monotonic constraints for regulated credit models.* Journal of Applied Credit Analytics, 13(1), 52-79.",
+        "line": 223
+      },
+      {
+        "key": "hosmer:1980",
+        "surname": "Hosmer",
+        "year": "1980",
+        "text": "Hosmer, D., and Lemeshow, S. (1980). Goodness of fit tests for the multiple logistic regression model. *Communications in Statistics*, 9(10), 1043-1069.",
+        "line": 225
+      },
+      {
+        "key": "ostrowska:2022",
+        "surname": "Ostrowska",
+        "year": "2022",
+        "text": "Ostrowska, J., Baptiste, R., and Kuroda, M. (2022). *Simulated exposure paths versus credit conversion factors for committed retail lines.* Quantitative Banking Studies, 14(3), 233-268.",
+        "line": 231
+      },
+      {
+        "key": "sengupta:2017",
+        "surname": "Sengupta",
+        "year": "2017",
+        "text": "Sengupta, A. (2017). Dirichlet regression for recovery cash-flow timing. *Review of Credit Portfolio Management*, 11(4), 301-327.",
+        "line": 233
+      },
+      {
+        "key": "van:2015",
+        "surname": "Van",
+        "year": "2015",
+        "text": "Van Der Meulen, B. (2015). Behavioural life estimation for open-ended consumer facilities. *European Journal of Risk Measurement*, 18(1), 44-72.",
+        "line": 235
+      }
+    ],
+    "jaccard": 0.1333
+  },
+  "terminology": {
+    "left_only": [
+      [
+        "t",
+        0.0938
+      ],
+      [
+        "variable",
+        0.0832
+      ],
+      [
+        "std",
+        0.0782
+      ],
+      [
+        "stage",
+        0.0762
+      ],
+      [
+        "clrm",
+        0.0762
+      ],
+      [
+        "origin",
+        0.0762
+      ],
+      [
+        "measure",
+        0.0691
+      ],
+      [
+        "ead/balance",
+        0.0691
+      ],
+      [
+        "segments",
+        0.0691
+      ],
+      [
+        "e",
+        0.0661
+      ],
+      [
+        "treatment",
+        0.0661
+      ],
+      [
+        "line",
+        0.0661
+      ],
+      [
+        "field",
+        0.0626
+      ],
+      [
+        "beginning",
+        0.0626
+      ],
+      [
+        "commitments",
+        0.0626
+      ],
+      [
+        "dpd",
+        0.0626
+      ],
+      [
+        "2",
+        0.0586
+      ],
+      [
+        "committed",
+        0.0586
+      ],
+      [
+        "symbol",
+        0.0586
+      ],
+      [
+        "t-stat",
+        0.0586
+      ],
+      [
+        "uses",
+        0.0586
+      ],
+      [
+        "holdout",
+        0.0586
+      ],
+      [
+        "logistic",
+        0.0586
+      ],
+      [
+        "contractual",
+        0.0586
+      ],
+      [
+        "48",
+        0.0586
+      ]
+    ],
+    "right_only": [
+      [
+        "helix",
+        0.1052
+      ],
+      [
+        "m",
+        0.1006
+      ],
+      [
+        "path",
+        0.0859
+      ],
+      [
+        "life",
+        0.0859
+      ],
+      [
+        "month",
+        0.0839
+      ],
+      [
+        "features",
+        0.0819
+      ],
+      [
+        "up",
+        0.077
+      ],
+      [
+        "new",
+        0.0742
+      ],
+      [
+        "control",
+        0.0742
+      ],
+      [
+        "auc",
+        0.071
+      ],
+      [
+        "frequency",
+        0.071
+      ],
+      [
+        "effect",
+        0.071
+      ],
+      [
+        "object",
+        0.071
+      ],
+      [
+        "meaning",
+        0.071
+      ],
+      [
+        "two",
+        0.0673
+      ],
+      [
+        "them",
+        0.0673
+      ],
+      [
+        "later",
+        0.0673
+      ],
+      [
+        "k",
+        0.0673
+      ],
+      [
+        "history",
+        0.0673
+      ],
+      [
+        "grain",
+        0.0673
+      ],
+      [
+        "findings",
+        0.0673
+      ],
+      [
+        "family",
+        0.0673
+      ],
+      [
+        "headline",
+        0.0673
+      ],
+      [
+        "feed",
+        0.0673
+      ],
+      [
+        "state",
+        0.0673
+      ]
+    ]
+  },
+  "table_pairs": [
+    {
+      "left_id": "left:s021:b01",
+      "right_id": "right:s014:b07",
+      "score": 0.4952,
+      "header_jaccard": 0.7143,
+      "caption_similarity": 0.1667,
+      "confidence": 0.0,
+      "n_columns_aligned": 4,
+      "n_rows_aligned": 0,
+      "deltas": [],
+      "declined": "row labels do not align (positional diffing would invent changes)"
+    },
+    {
+      "left_id": "left:s018:b01",
+      "right_id": "right:s014:b01",
+      "score": 0.3346,
+      "header_jaccard": 0.25,
+      "caption_similarity": 0.4615,
+      "confidence": 0.1667,
+      "n_columns_aligned": 2,
+      "n_rows_aligned": 1,
+      "deltas": [],
+      "declined": "row labels do not align (positional diffing would invent changes)"
+    }
+  ],
+  "warnings": [],
+  "generated_at": "2026-09-13T00:34:57+00:00",
+  "section_best": {
+    "left:s001": 0.9927999973297119,
+    "left:s002": 0.9635999798774719,
+    "left:s003": 0.9503999948501587,
+    "left:s005": 0.7771999835968018,
+    "left:s006": 0.8292999863624573,
+    "left:s007": 0.9061999917030334,
+    "left:s009": 0.9757999777793884,
+    "left:s010": 0.9151999950408936,
+    "left:s011": 0.991599977016449,
+    "left:s012": 0.9842000007629395,
+    "left:s013": 0.9430999755859375,
+    "left:s015": 0.8632000088691711,
+    "left:s016": 0.9480000138282776,
+    "left:s017": 0.9635999798774719,
+    "left:s018": 0.8970999717712402,
+    "left:s020": 0.715499997138977,
+    "left:s021": 0.9103999733924866,
+    "left:s022": 0.9417999982833862,
+    "left:s023": 0.6549999713897705,
+    "left:s024": 0.9866999983787537,
+    "left:s025": 0.9381999969482422,
+    "left:s027": 0.7954000234603882,
+    "left:s028": 0.8921999931335449,
+    "right:s002": 0.9927999973297119,
+    "right:s004": 0.964900016784668,
+    "right:s005": 0.9710000157356262,
+    "right:s006": 0.9417999982833862,
+    "right:s007": 0.9061999917030334,
+    "right:s009": 0.8984000086784363,
+    "right:s010": 0.9151999950408936,
+    "right:s011": 0.991599977016449,
+    "right:s012": 0.9866999983787537,
+    "right:s013": 0.6283000111579895,
+    "right:s014": 0.928600013256073,
+    "right:s016": 0.8497999906539917,
+    "right:s017": 0.6144000291824341,
+    "right:s018": 0.6960999965667725,
+    "right:s019": 0.6621999740600586,
+    "right:s022": 0.6754999756813049,
+    "right:s023": 0.9358000159263611,
+    "right:s024": 0.3790000081062317,
+    "left:s004": 0.732437252998352,
+    "left:s008": 0.7446645498275757,
+    "left:s014": 0.6977224349975586,
+    "left:s019": 0.7084126472473145,
+    "right:s003": 0.7535032629966736,
+    "right:s008": 0.749289870262146,
+    "right:s015": 0.6479003429412842,
+    "right:s021": 0.6441329121589661
+  }
+}

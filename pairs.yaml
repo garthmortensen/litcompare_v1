@@ -1,0 +1,8 @@
+defaults:
+  model: sentence-transformers/all-MiniLM-L6-v2
+  calibration: percentile
+
+pairs:
+  - champion: lit_md/champion.md
+    challenger: lit_md/challenger.md
+    out: reports/credit_risk.md

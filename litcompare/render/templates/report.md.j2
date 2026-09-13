@@ -1,0 +1,266 @@
+# {{ left_title }} vs {{ right_title }}
+
+**Champion:** `{{ left_path }}`
+**Challenger:** `{{ right_path }}`
+**Model:** {{ model_id }} (revision `{{ model_revision }}`)
+**Layout:** {{ layout }}
+**Generated:** {{ generated_at }}
+
+<details><summary>Run parameters</summary>
+
+| Parameter | Value |
+|---|---|
+{% for k, v in params.items() %}
+| {{ k }} | {{ v }} |
+{% endfor %}
+
+</details>
+
+<details><summary>Calibration (this pair's own null distribution)</summary>
+
+| Stat | Raw cosine |
+|---|---|
+| min | {{ calibration.raw_min }} |
+| p05 | {{ calibration.raw_p05 }} |
+| median | {{ calibration.raw_median }} |
+| p95 | {{ calibration.raw_p95 }} |
+| max | {{ calibration.raw_max }} |
+| lexical median | {{ calibration.lexical_median }} |
+| lexical max | {{ calibration.lexical_max }} |
+| mode | {{ calibration.mode }} |
+
+Decile distribution (raw cosine, 0–100%): {{ calibration.deciles }}
+
+</details>
+
+{% if warnings %}
+## ⚠ Warnings
+
+{% for w in warnings %}
+- {{ w }}
+{% endfor %}
+{% endif %}
+
+## Scorecard
+
+| Metric | Value |
+|---|---|
+| Mean accepted score | {{ metrics.mean_accepted_score }} |
+| Accepted pairs (strong / weak) | {{ metrics.accepted_pairs }} ({{ metrics.strong_pairs }} / {{ metrics.weak_pairs }}) |
+| Anchors | {{ metrics.anchors }} |
+| Sections (champion / challenger) | {{ metrics.sections_left }} / {{ metrics.sections_right }} |
+| Left-only / right-only sections | {{ metrics.left_only }} / {{ metrics.right_only }} |
+| Split / merge / moved | {{ metrics.split_count }} / {{ metrics.merge_count }} / {{ metrics.moved_count }} |
+| Order divergence (1 − LIS/pairs) | {{ metrics.order_divergence }} |
+| Kendall tau | {{ metrics.kendall_tau }} |
+| Document cosine (not the headline — see note) | {{ metrics.document_cosine }} |
+
+**Coverage (champion → challenger):** overall {{ metrics.coverage_left.overall }} — prose {{ metrics.coverage_left.prose }}, table {{ metrics.coverage_left.table }}, math {{ metrics.coverage_left.math }}
+**Coverage (challenger → champion):** overall {{ metrics.coverage_right.overall }} — prose {{ metrics.coverage_right.prose }}, table {{ metrics.coverage_right.table }}, math {{ metrics.coverage_right.math }}
+
+## Table of contents
+
+- [Alignment map](#alignment-map)
+- [Side-by-side](#side-by-side)
+- [Only in champion](#only-in-champion)
+- [Only in challenger](#only-in-challenger)
+- [Numeral cross-index](#numeral-cross-index)
+- [Citation overlap](#citation-overlap)
+- [Terminology diff](#terminology-diff)
+- [Table pairs](#table-pairs)
+
+## Alignment map
+
+| # | Champion section | cos | score | Challenger section | relation | moved |
+|---|---|---|---|---|---|---|
+{% for row in alignment_rows %}
+| {{ row.idx }} | {{ row.left_heading }} | {{ row.cosine if row.cosine is not none else "—" }} | {{ row.score }} | {{ row.right_heading }} | {{ row.relation }} | {{ "yes" if row.moved else "" }} |
+{% endfor %}
+
+## Side-by-side
+
+{% for pair in pairs %}
+### {{ pair.left_heading or "(none)" }} ↔ {{ pair.right_heading or "(none)" }}
+
+_relation: {{ pair.relation }}{{ " (moved)" if pair.moved else "" }} — score {{ pair.score }}_
+
+{% if layout == 'html-table' %}
+<table class="lc-pair">
+<thead><tr><th>Champion</th><th>sim</th><th>Challenger</th></tr></thead>
+<tbody>
+{% for row in pair.rows %}
+<tr><td>{{ row.left_html | safe }}<br><sub>{{ row.left_anchor }}</sub></td><td>{{ row.sim }}</td><td>{{ row.right_html | safe }}<br><sub>{{ row.right_anchor }}</sub></td></tr>
+{% if row.inline_diff %}
+<tr><td colspan="3"><em>diff:</em> {{ row.inline_diff | safe }}</td></tr>
+{% endif %}
+{% if row.numeric_deltas %}
+<tr><td colspan="3"><em>numeric changes:</em> {% for d in row.numeric_deltas %}{{ d.from }} → {{ d.to }}{{ ", " if not loop.last else "" }}{% endfor %}</td></tr>
+{% endif %}
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+{% for row in pair.rows %}
+**Champion** (`{{ row.left_anchor }}`):
+
+{{ row.left_html | safe }}
+
+**Challenger** (`{{ row.right_anchor }}`) — sim {{ row.sim }}:
+
+{{ row.right_html | safe }}
+
+{% if row.inline_diff %}
+_diff:_ {{ row.inline_diff | safe }}
+
+{% endif %}
+{% if row.numeric_deltas %}
+_numeric changes:_ {% for d in row.numeric_deltas %}{{ d.from }} → {{ d.to }}{{ ", " if not loop.last else "" }}{% endfor %}
+
+{% endif %}
+---
+{% endfor %}
+{% endif %}
+
+{% if pair.left_only_rows %}
+_Champion content in this section pair with no counterpart here (may be matched elsewhere — see coverage):_
+{% for r in pair.left_only_rows %}
+- {{ r.html | safe }} (`{{ r.anchor }}`)
+{% endfor %}
+{% endif %}
+{% if pair.right_only_rows %}
+_Challenger content in this section pair with no counterpart here:_
+{% for r in pair.right_only_rows %}
+- {{ r.html | safe }} (`{{ r.anchor }}`)
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+
+## Only in champion
+
+{% if left_only %}
+| Heading | Size (chars) | Best match anywhere | Excerpt |
+|---|---|---|---|
+{% for s in left_only %}
+| {{ s.heading }} (`{{ s.anchor }}`) | {{ s.size_chars }} | {{ s.best_match }} | {{ s.excerpt }} |
+{% endfor %}
+{% else %}
+_None._
+{% endif %}
+
+## Only in challenger
+
+{% if right_only %}
+| Heading | Size (chars) | Best match anywhere | Excerpt |
+|---|---|---|---|
+{% for s in right_only %}
+| {{ s.heading }} (`{{ s.anchor }}`) | {{ s.size_chars }} | {{ s.best_match }} | {{ s.excerpt }} |
+{% endfor %}
+{% else %}
+_None._
+{% endif %}
+
+## Numeral cross-index
+
+{{ numerals.left_count }} numerals extracted from champion, {{ numerals.right_count }} from challenger.
+
+### Agreements
+
+{% if numerals.agreements %}
+| Quantity | Champion | Challenger | Δ | Evidence |
+|---|---|---|---|---|
+{% for a in numerals.agreements %}
+| {{ a.quantity }} | {{ a.left }} (`{{ a.left_section }}`) | {{ a.right }} (`{{ a.right_section }}`) | {{ a.relative_diff }} | {{ a.evidence }} |
+{% endfor %}
+{% else %}
+_None found._
+{% endif %}
+
+### Disagreements
+
+{% if numerals.disagreements %}
+| Quantity | Champion | Challenger | Δ | Evidence |
+|---|---|---|---|---|
+{% for a in numerals.disagreements %}
+| {{ a.quantity }} | {{ a.left }} (`{{ a.left_section }}`) | {{ a.right }} (`{{ a.right_section }}`) | {{ a.relative_diff }} | {{ a.evidence }} |
+{% endfor %}
+{% else %}
+_None found._
+{% endif %}
+
+{% if numerals.left_internal_inconsistencies %}
+### Champion internal inconsistencies
+
+| Quantity | A | B | Δ |
+|---|---|---|---|
+{% for r in numerals.left_internal_inconsistencies %}
+| {{ r.quantity }} | {{ r.a }} (`{{ r.a_section }}`) | {{ r.b }} (`{{ r.b_section }}`) | {{ r.relative_diff }} |
+{% endfor %}
+{% endif %}
+{% if numerals.right_internal_inconsistencies %}
+### Challenger internal inconsistencies
+
+| Quantity | A | B | Δ |
+|---|---|---|---|
+{% for r in numerals.right_internal_inconsistencies %}
+| {{ r.quantity }} | {{ r.a }} (`{{ r.a_section }}`) | {{ r.b }} (`{{ r.b_section }}`) | {{ r.relative_diff }} |
+{% endfor %}
+{% endif %}
+
+## Citation overlap
+
+{{ citations.left_count }} champion citations, {{ citations.right_count }} challenger citations, Jaccard {{ citations.jaccard }}.
+
+**Shared ({{ citations.shared | length }}):**
+{% for c in citations.shared %}
+- {{ c.key }} — {{ c.left }}
+{% endfor %}
+
+**Champion-only ({{ citations.left_only | length }}):**
+{% for c in citations.left_only %}
+- {{ c.text }}
+{% endfor %}
+
+**Challenger-only ({{ citations.right_only | length }}):**
+{% for c in citations.right_only %}
+- {{ c.text }}
+{% endfor %}
+
+## Terminology diff
+
+**Champion-only terms:** {% for t, w in terminology.left_only %}{{ t }}{{ ", " if not loop.last else "" }}{% endfor %}
+
+**Challenger-only terms:** {% for t, w in terminology.right_only %}{{ t }}{{ ", " if not loop.last else "" }}{% endfor %}
+
+## Table pairs
+
+{% if table_pairs %}
+{% for tp in table_pairs %}
+### `{{ tp.left_id }}` ↔ `{{ tp.right_id }}`
+
+score {{ tp.score }}, header jaccard {{ tp.header_jaccard }}, confidence {{ tp.confidence }}
+{% if tp.declined %}
+_declined: {{ tp.declined }}_
+{% elif tp.deltas %}
+
+| Row | Column | From | To | Δ |
+|---|---|---|---|---|
+{% for d in tp.deltas %}
+| {{ d.row }} / {{ d.right_row }} | {{ d.column }} / {{ d.right_column }} | {{ d.from }} | {{ d.to }} | {{ d.relative_diff }} |
+{% endfor %}
+{% else %}
+_No cell-level deltas above tolerance._
+{% endif %}
+{% endfor %}
+{% else %}
+_No table pairs matched above threshold._
+{% endif %}
+
+{% if include_matrix %}
+## Appendix: full similarity matrix
+
+_Omitted from this render -- the raw section/block similarity matrices are
+not part of the JSON-serialisable `ComparisonResult`. Available today via
+the `.json` sidecar's per-pair scores; a dedicated matrix dump is future
+work (see plan's "Out of scope")._
+{% endif %}
